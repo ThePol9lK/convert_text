@@ -38,7 +38,7 @@ def process_file(message):
         print(text)
 
         engine.save_to_file(text,
-                            r"handlers/custom_handlers/output.wav")  # Замените текст на то, что хотите озвучить, и указать путь для сохранения аудиофайла
+                            r"handlers/custom_handlers/output.wav")
         engine.runAndWait()
 
         # Отправляем голосовой ответ пользователю

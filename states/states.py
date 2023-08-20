@@ -1,5 +1,8 @@
 from telebot.handler_backends import State, StatesGroup
 
 
-class UserInfoState(StatesGroup):
+class UserDocument(StatesGroup):
+    enter_document = State()
+
+class UserText(StatesGroup):
     enter_text = State()

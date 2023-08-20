@@ -11,6 +11,7 @@ if not find_dotenv():
 load_dotenv()
 
 BOT_TOKEN = os.getenv('BOT_TOKEN')
+PATH_AUDIO = 'utils/save_audio/output.mp3'
 
 DEFAULT_COMMANDS = (
     ('help', 'Помощь'),
@@ -18,5 +19,6 @@ DEFAULT_COMMANDS = (
 )
 
 CUSTOM_COMMANDS = (
-    ('voice', 'Ковертация текста в голос'),
+    ('voice', 'Ковертация файла в mp3'),
+    ('text', 'Ковертация текста в mp3'),
 )

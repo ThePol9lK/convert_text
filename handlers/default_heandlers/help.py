@@ -13,4 +13,4 @@ def get_help(message: str) -> None:
     :param message:
     :return:
     """
-    bot.send_message(message.chat.id, 'Напиши /voice для работы')
+    bot.send_message(message.chat.id, 'Я умею конвертировать ')

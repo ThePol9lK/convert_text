@@ -11,7 +11,7 @@ if not find_dotenv():
 load_dotenv()
 
 BOT_TOKEN = os.getenv('BOT_TOKEN')
-PATH_AUDIO = 'utils/save_audio/output.mp3'
+ADMIN_LIST = os.getenv('ADMINS')
 
 DEFAULT_COMMANDS = (
     ('help', 'Помощь'),

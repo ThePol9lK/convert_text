@@ -11,4 +11,5 @@ def get_start(message: Message) -> None:
     :param message:
     :return:
     """
-    bot.send_message(message.chat.id, 'Привет, я бот для конвертации из текста в голос', reply_markup=choise())
+    bot.send_message(message.chat.id, 'Привет, я бот для конвертации из текста в голос. Чтобы узнать команды напиши '
+                                      '/help', reply_markup=choise())

@@ -1,6 +1,7 @@
-from loader import bot
+import time
+
+from loader import bot, engine
 from states.states import UserText
-from utils.engine import Engine
 
 
 @bot.message_handler(commands=['text'])
@@ -14,10 +15,10 @@ def process_file(message):
     try:
 
         text_from_user = message.text
-        Engine.auidoi(text_from_user)
+        path_text = engine.check_dir(message.from_user.username, time.time())
+        engine.create_audio(text_from_user, path_text)
 
-        # Отправляем голосовой ответ пользователю
-        with open(PATH_AUDIO, 'rb') as f:
+        with open(path_text, 'rb') as f:
             bot.send_voice(message.chat.id, voice=f.read())
 
     except Exception as e:

@@ -1,7 +1,6 @@
-from telebot.types import Message
-
 from keyboards.inline.choise_kb import choise
 from loader import bot
+from telebot.types import Message
 
 
 @bot.message_handler(commands=['start'])

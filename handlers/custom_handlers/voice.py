@@ -1,19 +1,30 @@
 import os
 import time
 
+from telebot.types import Message
 from loader import bot, engine
 from states.states import UserDocument
 import textract
 
 
 @bot.message_handler(commands=['voice'])
-def handle_audio(message):
+def handle_audio(message: Message):
+    """
+    Обработка команды voice
+    :param message: Message
+    :return:
+    """
     bot.send_message(message.chat.id, 'Отправь мне файл')
     bot.set_state(message.from_user.id, UserDocument.enter_document)
 
 
 @bot.message_handler(state=UserDocument.enter_document, content_types=['document'])
-def process_file(message):
+def process_file(message: Message):
+    """
+    Проверка файла и ее последующая обработка
+    :param message: Message
+    :return:
+    """
     document = message.document
     file_extension = document.file_name.rsplit('.', 1)[1].lower()
 
